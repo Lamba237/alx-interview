@@ -8,11 +8,11 @@ def canUnlockAll(boxes):
        boxes: A list
     Return: boolean
     """
-    
+
     n = len(boxes)
 
     opened = set()
-    stack = [0] # default box to be processed
+    stack = [0]   # default box to be processed
 
     while stack:
         box = stack.pop()
