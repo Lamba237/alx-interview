@@ -1,9 +1,18 @@
 #!/usr/bin/python3
+"""Lockbox solution"""
+
+
 def canUnlockAll(boxes):
-    # first create a set to keep track of which boxes have been open
+    """This functio checks if boxes can be opened
+    Args:
+       boxes: A list
+    Return: boolean
+    """
+    
     n = len(boxes)
+
     opened = set()
-    stack = [0]
+    stack = [0] # default box to be processed
 
     while stack:
         box = stack.pop()
