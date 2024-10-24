@@ -19,7 +19,9 @@ log_pattern = re.compile(r'^\S+ - \[\S+ \S+\] "GET /projects/260 HTTP/1.1" (\d{3
 
 
 def print_statistics():
-    """Print the collected statistics."""
+    """
+    Print the collected statistics.
+    """
     print(f"File size: {total_file_size}")
     for code in sorted(status_code_counts.keys()):
         if status_code_counts[code] > 0:
@@ -27,7 +29,13 @@ def print_statistics():
 
 
 def signal_handler(sig, frame):
-    """Handle keyboard interruption (CTRL + C)."""
+    """
+    Handle keyboard interruption (CTRL + C).
+
+    Args:
+      sig: the signal number
+      frame: the current stack frame
+    """
     print_statistics()
     sys.exit(0)
 
