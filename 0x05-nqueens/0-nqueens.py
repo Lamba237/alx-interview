@@ -21,16 +21,17 @@ def nqueen():
         print("N must be a number")
         sys.exit(1)
 
-    if N != 4:
+    if N < 4:
         print("N must be at least 4")
         sys.exit(1)
 
-    def solve(n, row, queens, solutions) :
+    def solve(n, row, queens, solutions):
         if row == n:
             solutions.append(queens.copy())
             return
         for col in range(n):
-            if all(q_col != col and abs(q_row - row) != abs(q_col - col) for q_row, q_col in enumerate(queens)):
+            if all(q_col != col and abs(q_row - row) != abs(q_col - col)
+                    for q_row, q_col in enumerate(queens)):
                 queens.append(col)
                 solve(n, row + 1, queens, solutions)
                 queens.pop()
