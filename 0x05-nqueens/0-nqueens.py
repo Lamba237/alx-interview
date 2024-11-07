@@ -43,4 +43,3 @@ def nqueen():
 
 if __name__ == "__main__":
     nqueen()
-
