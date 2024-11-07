@@ -25,6 +25,20 @@ def nqueen():
         print("N must be at least 4")
         sys.exit(1)
 
+    def solve(n, row, queens, solutions) :
+        if row == n:
+            solutions.append(queens.copy())
+            return
+        for col in range(n):
+            if all(q_col != col and abs(q_row - row) != abs(q_col - col) for q_row, q_col in enumerate(queens)):
+                queens.append(col)
+                solve(n, row + 1, queens, solutions)
+                queens.pop()
+    solutions = []
+    solve(N, 0, [], solutions)
+    for sol in solutions:
+        print([[i, sol[i]] for i in range(N)])
+
 
 if __name__ == "__main__":
     nqueen()
