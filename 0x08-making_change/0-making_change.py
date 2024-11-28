@@ -13,11 +13,11 @@ def makeChange(coins, total):
 
     Return: fewest number of coins needed
     """
-    
+
     if total <= 0:
         return 0
 
-    # Initialize the dp array with a value greater than the maximum possible number of coins
+    # initiate the dp array with a value greater
     dp = [float('inf')] * (total + 1)
     dp[0] = 0
 
