@@ -32,6 +32,7 @@ def play_round(n):
         turn = 1 - turn
     return turn  # 0 if Ben wins, 1 if Maria wins
 
+
 def isWinner(x, nums):
     """
     Determine the winner of the most rounds
