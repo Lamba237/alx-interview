@@ -15,7 +15,7 @@ def island_perimeter(grid):
 
     Args:
         grid: list of list of integers
-    
+
     Return: perimeter
     """
     perimeter = 0
